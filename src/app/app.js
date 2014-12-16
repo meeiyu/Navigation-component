@@ -10,41 +10,41 @@ var React = require('react'),
   "data": [
     {
       "text": "Link1",
-      "url": "http://www.google.com"
+      "url": "#"
     },
     {
       "text": "Link2",
-      "url": "http://www.yahoo.com"
+      "url": "#"
     },
     {
-      "Dropdown": "Dropdown_val",
+      "text": "Dropdown_val",
       "url": "",
       "dropdown_data": [
         {
           "text": "action-1",
-          "url": "http://www.google.com?1"
+          "url": "#"
         },
         {
           "text": "action-2",
-          "url": "http://www.google.com?1"
+          "url": "#"
         }
       ]
     },
     {
       "text": "Link3",
-      "url": "http://www.yahoo.com"
+      "url": "#"
     },
     {
-      "Dropdown": "Dropdown_val",
+      "text": "Dropdown_val",
       "url": "",
       "dropdown_data": [
         {
           "text": "action-1",
-          "url": "http://www.google.com?1"
+          "url": "#"
         },
         {
           "text": "action-2",
-          "url": "http://www.google.com?1"
+          "url": "#"
         }
       ]
     }
@@ -53,13 +53,17 @@ var React = require('react'),
 
 
 ExampleApp = React.createClass({
+    clickHandler: function(name, val){
+        console.log(name, val);
+    },
     render: function() {
         return (
         	/*jshint ignore:start */
             <div>
             	<BSNavigation
                     name="Navigation"
-                    options={NavigationOptions} />
+                    options={NavigationOptions} 
+                    onClickHandler={this.clickHandler} />
             </div>
             /*jshint ignore:end */
         );
